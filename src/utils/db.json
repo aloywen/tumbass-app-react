@@ -1,0 +1,275 @@
+{
+  "category": [
+    {
+      "id": 1,
+      "nama": "Bag",
+      "url": "bag"
+    },
+    {
+      "id": 2,
+      "nama": "Shoes",
+      "url": "shoes"
+    },
+    {
+      "id": 3,
+      "nama": "Cardigan",
+      "url": "cardigan"
+    },
+    {
+      "id": 4,
+      "nama": "Hoodie",
+      "url": "hoodie"
+    },
+    {
+      "id": 5,
+      "nama": "Watch",
+      "url": "watch"
+    },
+    {
+      "id": 6,
+      "nama": "Pants",
+      "url": "pants"
+    },
+    {
+      "id": 7,
+      "nama": "Shirt",
+      "url": "shirt"
+    },
+    {
+      "id": 8,
+      "nama": "Men",
+      "url": "men"
+    },
+    {
+      "id": 9,
+      "nama": "Women",
+      "url": "women"
+    }
+  ],
+  "hero": [
+    {
+      "id": 1,
+      "nama": "Women's Bags",
+      "gambar": "tas.png"
+    },
+    {
+      "id": 2,
+      "nama": "Discount Up To 50%",
+      "gambar": "discounts.png"
+    },
+    {
+      "id": 3,
+      "nama": "Free Shipping",
+      "gambar": "free-ship.png"
+    }
+  ],
+  "special": [
+    {
+      "id": 1,
+      "nama": "Running Shoes",
+      "gambar": "running-shoes.jpg",
+      "harga": 125000,
+      "disc": 95000
+    },
+    {
+      "id": 2,
+      "nama": "Long Pants Chinos",
+      "gambar": "chinos.jpg",
+      "harga": 135000,
+      "disc": 99999
+    },
+    {
+      "id": 3,
+      "nama": "Green Cable Cardigan",
+      "gambar": "cardigan.jpg",
+      "harga": 145000,
+      "disc": 109999
+    }
+  ],
+  "terlaris": [
+    {
+      "id": 1,
+      "nama": "Vitamin C",
+      "gambar": "c1000.jpg"
+    },
+    {
+      "id": 2,
+      "nama": "Kacamata",
+      "gambar": "kacamata.png"
+    },
+    {
+      "id": 3,
+      "nama": "Masker",
+      "gambar": "masker.jpg"
+    },
+    {
+      "id": 4,
+      "nama": "Laptop",
+      "gambar": "lapt.jpg"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "kode": "K-01",
+      "nama": "Black Cardigan",
+      "slug": "black-cardigan",
+      "harga": 120000,
+      "gambar": "cardigan.jfif",
+      "cat": "cardigan",
+      "stok": 10,
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+    },
+    {
+      "id": 2,
+      "kode": "K-02",
+      "nama": "Winter Hoodie",
+      "slug": "winter-hoodie",
+      "harga": 99000,
+      "gambar": "hoodie.webp",
+      "cat": "hoodie",
+      "stok": 10,
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+    },
+    {
+      "id": 3,
+      "kode": "K-03",
+      "nama": "Anonimous Hoodie",
+      "slug": "anonimous-hoodie",
+      "harga": 130000,
+      "gambar": "h-anonymous.jpg",
+      "cat": "hoodie",
+      "stok": 10,
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+    },
+    {
+      "id": 4,
+      "kode": "K-04",
+      "nama": "Converse All Star",
+      "slug": "converse-all-star",
+      "harga": 230000,
+      "gambar": "converse.jpg",
+      "cat": "shoes",
+      "stok": 10,
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+    },
+    {
+      "id": 5,
+      "kode": "K-05",
+      "nama": "Grey Cardigan",
+      "slug": "grey-cardigan",
+      "harga": 132000,
+      "gambar": "3.jpg",
+      "cat": "cardigan",
+      "stok": 10,
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+    },
+    {
+      "id": 6,
+      "kode": "K-06",
+      "nama": "RUNDMC Hoodie",
+      "slug": "rundmc-hoodie",
+      "harga": 170000,
+      "gambar": "rundmc.jpg",
+      "cat": "hoodie",
+      "stok": 10,
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+    },
+    {
+      "id": 7,
+      "kode": "K-07",
+      "nama": "Ice Cream Hat",
+      "slug": "ice-cream-hat",
+      "harga": 97000,
+      "gambar": "hat-ice.jpg",
+      "cat": "women",
+      "stok": 10,
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+    },
+    {
+      "id": 8,
+      "kode": "K-08",
+      "nama": "Smile Shoes",
+      "slug": "smile-shoes",
+      "harga": 110000,
+      "gambar": "patuc.jpg",
+      "cat": "shoes",
+      "stok": 10,
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+    }
+  ],
+  "help": [
+    {
+      "id": 1,
+      "nama": "Delivery"
+    },
+    {
+      "id": 2,
+      "nama": "Payment"
+    },
+    {
+      "id": 3,
+      "nama": "Track Your Order"
+    },
+    {
+      "id": 4,
+      "nama": "About Your Account"
+    },
+    {
+      "id": 5,
+      "nama": "Exchange And Return"
+    },
+    {
+      "id": 6,
+      "nama": "Terms And Codition"
+    }
+  ],
+  "payment": [
+    {
+      "id": 1,
+      "gambar": "alfamart.png"
+    },
+    {
+      "id": 2,
+      "gambar": "alfamidi.png"
+    },
+    {
+      "id": 3,
+      "gambar": "indomart.png"
+    },
+    {
+      "id": 4,
+      "gambar": "bni.png"
+    },
+    {
+      "id": 5,
+      "gambar": "bca.png"
+    },
+    {
+      "id": 6,
+      "gambar": "bri.png"
+    },
+    {
+      "id": 7,
+      "gambar": "mandiri.png"
+    }
+  ],
+  "shipping": [
+    {
+      "id": 1,
+      "gambar": "jne.png"
+    },
+    {
+      "id": 2,
+      "gambar": "sicepat.png"
+    },
+    {
+      "id": 3,
+      "gambar": "tiki.png"
+    },
+    {
+      "id": 4,
+      "gambar": "jnt.png"
+    }
+  ]
+}
