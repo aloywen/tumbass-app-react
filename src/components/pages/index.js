@@ -1,3 +1,4 @@
+import Detailproduct from './Detailproduct'
 import Category from './Category'
 
-export { Category }
+export { Detailproduct, Category }
