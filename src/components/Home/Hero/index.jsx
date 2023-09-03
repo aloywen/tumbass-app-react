@@ -1,5 +1,5 @@
 import React from 'react';
-import data from '../../utils/db.json'
+import data from '../../../utils/db.json'
 
 export default function Index() {
 

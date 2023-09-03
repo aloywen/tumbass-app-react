@@ -1,5 +1,5 @@
 import React from 'react';
-import Data from '../../utils/db.json'
+import Data from '../../../utils/db.json'
 
 export default function Index() {
     const help = Data.help

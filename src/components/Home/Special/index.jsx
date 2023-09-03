@@ -1,5 +1,5 @@
 import React from 'react';
-import Data from '../../utils/db.json'
+import Data from '../../../utils/db.json'
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import 'swiper/css';
@@ -9,7 +9,7 @@ import 'swiper/css/pagination';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
-import { ContextDataCart } from '../../config'
+import { ContextDataCart } from '../../../config'
 
 
 
