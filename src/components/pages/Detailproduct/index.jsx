@@ -36,7 +36,7 @@ export default function Index() {
 
 
     // console.log(state);
-    // console.log(detailProduct);
+    console.log(detailProduct);
 
     return (
         <div className='md:mt-32'>
@@ -53,24 +53,30 @@ export default function Index() {
                         {'>'}
                         <p className='text-md line-clamp-1 font-primary'>{detailProduct.title}</p>
                     </div>
-                    <div className='flex justify-around gap-0 '>
-                        <div>
-                            <LazyLoadImage
-                                effect='opacity'
-                                src={detailProduct.image}
-                                alt=""
-                                style={{ width: '250px', objectFit: 'contain' }}
-                                className='rounded-t-md'
-                            />
+                    <div className='flex justify-between gap-0 relative'>
+                        <div className='flex w-2/3'>
+                            <div >
+                                <LazyLoadImage
+                                    effect='opacity'
+                                    src={detailProduct.image}
+                                    alt=""
+                                    style={{ width: '250px', objectFit: 'contain' }}
+                                    className='rounded-t-md'
+                                />
+                            </div>
+
+                            <div className='w-2/3 ml-16'>
+                                <p className='text-lg font-primary line-clamp-2 text-gray-800 mb-3'>{detailProduct.title}</p>
+                                <span className='font-primary text-2xl text-gray-700 font-bold'>{`$. ${detailProduct.price}`}</span>
+
+
+                                <p className='text-lg font-primary font-semibold text-gray-900 mt-4'>Description</p>
+                                <p className='text-md font-primary text-gray-600 mt-2 pr-3'>{detailProduct.description}</p>
+                            </div>
                         </div>
 
-                        <div className='w-2/3 ml-6'>
-                            <p className='text-lg font-primary line-clamp-2 text-gray-800 mb-3'>{detailProduct.title}</p>
-                            <span className='font-primary text-2xl text-gray-700 font-bold'>{`$. ${detailProduct.price}`}</span>
-                        </div>
 
-
-                        <div className='w-2/3'>
+                        <div className='w-1/3 sticky md:top-48 right-0'>
                             <div className='border border-gray-600 py-3 px-2 rounded-lg w-2/3'>
                                 <p>Quantity & Notes</p>
                                 <hr className='my-3' />
@@ -105,13 +111,17 @@ export default function Index() {
                                 </div>
 
                                 <div className='flex my-3'>
-                                    <button className='w-44 rounded-lg px-5 py-2 border border-primary font-primary text-primary'>Buy</button>
-                                    <button className='w-44 rounded-lg px-5 py-2 bg-primary font-primary text-white'>+ Add Cart</button>
+                                    <button className='w-44 rounded-lg px-3 py-2 border border-primary font-primary text-primary text-xs'>Buy</button>
+                                    <button className='w-44 rounded-lg px-3 py-2 bg-primary font-primary text-white text-xs'>+ Add Cart</button>
                                 </div>
 
                                 <div></div>
                             </div>
                         </div>
+                    </div>
+
+                    <div className='mt-20 mb-10'>
+                        <p className='font-primary text-xl md:text-2xl'>Recomended For You</p>
                     </div>
                 </div>
             }
