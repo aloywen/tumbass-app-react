@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom'
+import Card from '../Card'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
@@ -29,8 +30,8 @@ export default function Index() {
 
         <div className='flex justify-center gap-4 md:gap-9 flex-wrap mt-10'>
             {products.map((data =>
-                <Link to={/detailproduct/ + data.id} state={{ kode: data.id }}>
-                    <div className='w-40 md:w-60 rounded-lg border-2 border-primary hover:bg-purple-200 mx-auto mb-4' key={data.id}>
+                <Link to={/detailproduct/ + data.id} state={{ kode: data.id, cat: data.category }}>
+                    {/* <div className='w-40 md:w-60 rounded-lg border-2 border-primary hover:bg-purple-200 mx-auto mb-4' key={data.id}>
                         <LazyLoadImage
                             effect='opacity'
                             src={data.image}
@@ -38,11 +39,12 @@ export default function Index() {
                             style={{ objectFit: 'cover', width: 250, height: 200 }}
                             className='rounded-t-md' />
                         <div className='mt-2 ml-6 mb-6'>
-                            <p className='font-primary text-gray-500'>{data.title}</p>
+                            <p className='font-primary line-clamp-2 text-gray-500'>{data.title}</p>
                             <img src="/img/rating.png" alt="" className='w-20 mt-1' />
                             <p className='font-primary text-gray-700 mt-3 font-bold'>{`$. ${data.price}`}</p>
                         </div>
-                    </div>
+                    </div> */}
+                    <Card data={data} key={data.id} />
                 </Link>
             ))}
 

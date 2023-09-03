@@ -9,7 +9,7 @@ export default function Index() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                let response = await fetch(`https://fakestoreapi.com/products/category/${state.data}`)
+                let response = await fetch(`https://fakestoreapi.com/products/category/${state.cat}`)
                 if (response.status === 200) {
                     let data = await response.json()
                     setProductsCategory(data)
@@ -20,13 +20,14 @@ export default function Index() {
         }
 
         fetchData()
-    }, [state.data])
+    }, [state.cat])
 
+    // console.log(state);
     return (
         <div>
             <Category />
 
-            <p className='font-primary text-md md:text-xl ml-3 my-6'>Category {state.data}</p>
+            <p className='font-primary text-md md:text-xl ml-3 my-6'>Category {state.cat}</p>
             <div className='flex justify-center gap-4 md:gap-9 flex-wrap'>
                 {productsCategory.map((data) => (
                     <div>
