@@ -8,6 +8,12 @@ export default function Index() {
 
     const [isOpen, setIsOpen] = useState(false);
 
+    let totalCart = data.data.cart
+    let count = 0
+    for (let i = 0; i < totalCart.length; ++i) {
+        count++;
+    }
+
     return (
         <div className='relative '>
 
@@ -21,7 +27,7 @@ export default function Index() {
                             <Link to="/cart">
                                 <div className='flex gap-0'>
                                     <svg className="w-8 h-8 md:w-10 md:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
-                                    <span className='bg-red-600 rounded-full w-5 h-5 text-sm flex justify-center items-center text-white -ml-2'>{data.data.totalCart}</span>
+                                    <span className='bg-red-600 rounded-full w-5 h-5 text-sm flex justify-center items-center text-white -ml-2'>{count}</span>
                                 </div>
                             </Link>
                         </div>

@@ -10,10 +10,7 @@ export function ContextDataCart() {
 
 export function DataCart({ children }) {
   const [data, setData] = useState({
-    cart: {
-      item: '',
-      qty: '',
-    },
+    cart: [],
     totalCart: 0
   })
 

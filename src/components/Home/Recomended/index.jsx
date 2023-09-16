@@ -25,6 +25,7 @@ export default function Index() {
         fetchData()
     }, [])
 
+    // console.log(products);
     return <div className='md:mx-24 mt-14'>
         <p className='font-primary text-3xl md:text-4xl'>Recomended For You</p>
 

@@ -3,7 +3,7 @@ import { Category, Hero, Recomended, Special, Subscribe, Footer, Help } from '..
 
 export default function Index() {
     return (
-        <div>
+        <>
             <Category />
             <Hero />
             <Special />
@@ -11,6 +11,6 @@ export default function Index() {
             <Subscribe />
             <Help />
             <Footer />
-        </div>
+        </>
     )
 }

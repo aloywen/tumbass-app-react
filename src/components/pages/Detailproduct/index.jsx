@@ -4,14 +4,20 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import { JellyTriangle } from '@uiball/loaders'
 
+import { ContextDataCart } from '../../../config/'
+
 
 export default function Index() {
     let { state } = useLocation();
+    const cart = ContextDataCart()
+
     const [detailProduct, setDetailProduct] = useState()
     const [isLoading, setisLoading] = useState(true)
+    const [note, setNote] = useState('')
     const [notes, setisnotes] = useState(false)
     const [qty, setQty] = useState(1)
     const [price, setPrice] = useState('')
+
 
     useEffect(() => {
         const fetchData = async () => {
@@ -36,7 +42,7 @@ export default function Index() {
 
 
     // console.log(state);
-    console.log(detailProduct);
+    console.log(cart.data);
 
     return (
         <div className='md:mt-32'>
@@ -55,6 +61,8 @@ export default function Index() {
                     </div>
                     <div className='flex justify-between gap-0 relative'>
                         <div className='flex w-2/3'>
+
+                            {/* IMAGE */}
                             <div >
                                 <LazyLoadImage
                                     effect='opacity'
@@ -65,6 +73,7 @@ export default function Index() {
                                 />
                             </div>
 
+                            {/* TITLE & DESCRIPSTION */}
                             <div className='w-2/3 ml-16'>
                                 <p className='text-lg font-primary line-clamp-2 text-gray-800 mb-3'>{detailProduct.title}</p>
                                 <span className='font-primary text-2xl text-gray-700 font-bold'>{`$. ${detailProduct.price}`}</span>
@@ -76,6 +85,7 @@ export default function Index() {
                         </div>
 
 
+                        {/* NOTES */}
                         <div className='w-1/3 sticky md:top-48 right-0'>
                             <div className='border border-gray-600 py-3 px-2 rounded-lg w-2/3'>
                                 <p>Quantity & Notes</p>
@@ -92,7 +102,7 @@ export default function Index() {
 
                                 {notes ?
                                     <div>
-                                        <input className='border border-primary w-full rounded-lg p-2 mt-3 text-gray-700 font-primary' type="text" placeholder='Example : White Color' />
+                                        <input className='border border-primary w-full rounded-lg p-2 mt-3 text-gray-700 font-primary' type="text" placeholder='Example : White Color' onChange={() => setNote()} />
                                         <button onClick={() => setisnotes(false)} >Cancel</button>
                                     </div> :
                                     <button onClick={() => setisnotes(true)} className='text-primary font-medium flex my-3 gap-1'>
@@ -104,6 +114,7 @@ export default function Index() {
 
 
 
+                                {/* SUBPRICE & BUTTON ADD CART */}
                                 <div className='flex items-center justify-between mt-3'>
                                     <p className='font-primary text-gray-500'>Subtotal</p>
 
@@ -112,10 +123,21 @@ export default function Index() {
 
                                 <div className='flex my-3'>
                                     <button className='w-44 rounded-lg px-3 py-2 border border-primary font-primary text-primary text-xs'>Buy</button>
-                                    <button className='w-44 rounded-lg px-3 py-2 bg-primary font-primary text-white text-xs'>+ Add Cart</button>
+                                    <button className='w-44 rounded-lg px-3 py-2 bg-primary font-primary text-white text-xs'
+                                        onClick={() => {
+                                            cart.setData({
+                                                cart: [...cart.data.cart, {
+                                                    title: detailProduct.title,
+                                                    image: detailProduct.image,
+                                                    qty: 1,
+                                                    checked: false,
+                                                    notes: note
+                                                }]
+
+                                            })
+                                        }}>+ Add Cart</button>
                                 </div>
 
-                                <div></div>
                             </div>
                         </div>
                     </div>

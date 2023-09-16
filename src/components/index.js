@@ -1,6 +1,7 @@
 import Navbar from './Navbar'
 import Card from './Card'
-import Cart from './Cart'
+import Cardcart from './Cardcart'
+import Cart from './pages/Cart'
 import Detailproduct from './pages/Detailproduct'
 import Allproduct from './pages/Allproduct'
 import Category from './Category'
@@ -12,4 +13,4 @@ import Subscribe from './Home/Subscribe'
 import Help from './Home/Help'
 import Footer from './Footer'
 
-export { Navbar, Cart, Card, Allproduct, Detailproduct, Category, Hero, Home, Special, Recomended, Subscribe, Help, Footer } 
+export { Navbar, Cart, Cardcart, Card, Allproduct, Detailproduct, Category, Hero, Home, Special, Recomended, Subscribe, Help, Footer } 

@@ -5,7 +5,7 @@ import { JellyTriangle } from '@uiball/loaders'
 
 export default function Index() {
     const [products, setProducts] = useState([])
-    const [initPage, setInitPage] = useState(8)
+    const [initPage, setInitPage] = useState(4)
     const [isLoading, setisLoading] = useState(true)
 
 
@@ -46,8 +46,8 @@ export default function Index() {
         fetchData()
     }, [])
 
-    console.log(initPage);
-    console.log(products);
+    // console.log(initPage);
+    // console.log(products);
     return (
         <div>
             <div className='flex justify-center gap-4 md:gap-9 flex-wrap mt-36 md:mb-6'>
@@ -57,19 +57,19 @@ export default function Index() {
                     </Link>
                 ))}
 
-                {
-                    isLoading === true ? <div className='flex items-center justify-center'><JellyTriangle
-                        size={60}
-                        speed={1.75}
-                        color="black"
-                    /> </div> : ''
-                }
 
                 {
                     isLoading === false ? <button onClick={() => loadMore()} className='text-2xl rounded-lg bg-primary py-2 px-16 md:px-16 text-white mx-auto font-primary hover:bg-purple-600'>Load More</button> : ''
                 }
 
             </div>
+            {
+                isLoading === true ? <div className='flex items-center justify-center'><JellyTriangle
+                    size={60}
+                    speed={1.75}
+                    color="black"
+                /> </div> : ''
+            }
         </div>
     )
 }
