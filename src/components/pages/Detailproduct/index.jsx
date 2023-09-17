@@ -130,6 +130,7 @@ export default function Index() {
                                                     title: detailProduct.title,
                                                     image: detailProduct.image,
                                                     qty: 1,
+                                                    price: detailProduct.price,
                                                     checked: false,
                                                     notes: note
                                                 }]
