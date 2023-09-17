@@ -40,9 +40,30 @@ export default function Index() {
         fetchData()
     }, [])
 
+    const addToCart = () => {
 
-    // console.log(state);
-    console.log(cart.data);
+        if (cart.data.cart[0].title !== detailProduct.title) {
+            cart.setData({
+                cart: [...cart.data.cart, {
+                    title: detailProduct.title,
+                    image: detailProduct.image,
+                    qty: 1,
+                    price: detailProduct.price,
+                    checked: false,
+                    notes: note
+                }],
+
+                totalCart: cart.data.totalCart + 1
+
+            })
+        } else {
+            console.log('gak boleh double');
+        }
+
+    }
+
+    console.log(cart);
+    // console.log(title);
 
     return (
         <div className='md:mt-32'>
@@ -124,19 +145,8 @@ export default function Index() {
                                 <div className='flex my-3'>
                                     <button className='w-44 rounded-lg px-3 py-2 border border-primary font-primary text-primary text-xs'>Buy</button>
                                     <button className='w-44 rounded-lg px-3 py-2 bg-primary font-primary text-white text-xs'
-                                        onClick={() => {
-                                            cart.setData({
-                                                cart: [...cart.data.cart, {
-                                                    title: detailProduct.title,
-                                                    image: detailProduct.image,
-                                                    qty: 1,
-                                                    price: detailProduct.price,
-                                                    checked: false,
-                                                    notes: note
-                                                }]
-
-                                            })
-                                        }}>+ Add Cart</button>
+                                        onClick={addToCart}
+                                    >+ Add Cart</button>
                                 </div>
 
                             </div>
@@ -148,6 +158,6 @@ export default function Index() {
                     </div>
                 </div>
             }
-        </div>
+        </div >
     )
 }

@@ -6,7 +6,8 @@ export default function Index() {
     const store = ContextDataCart();
 
     let dataCart = store.data.cart
-    // console.log(dataCart);
+    let count = store.data.totalCart
+    console.log(count);
     return (
         <div className='mx-14'>
             <p className='text-2xl font-primary line-clamp-2 text-gray-900 mt-36 mb-3'>Keranjang</p>
@@ -21,7 +22,10 @@ export default function Index() {
                 </div>
 
                 <div className='w-4/12'>
-                    total
+                    <div className='p-4 shadow-lg w-full m-2'>
+                        <p>Summary</p>
+                        <p>Total Price {count > 1 ? 'items' : 'item'}</p>
+                    </div>
                 </div>
             </div>
         </div>
