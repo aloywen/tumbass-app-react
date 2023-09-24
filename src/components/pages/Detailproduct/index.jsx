@@ -10,13 +10,37 @@ export default function Index() {
     let { state } = useLocation();
     const cart = ContextDataCart()
 
-    const [cartProduct, setCartProduct] = useState(cart.data.cart)
     const [detailProduct, setDetailProduct] = useState()
     const [isLoading, setisLoading] = useState(true)
     const [note, setNote] = useState('')
     const [notes, setisnotes] = useState(false)
     const [qty, setQty] = useState(1)
-    const [price, setPrice] = useState('')
+    const [price, setPrice] = useState()
+    const [subTotal, setSubTotal] = useState()
+    const [warning, setWarning] = useState(false)
+
+
+
+    const addToCart = () => {
+
+        const found = cart.data.cart.some(e => e.id === detailProduct.id)
+        if (!found) {
+            cart.setData({
+                ...cart.data,
+                cart: [...cart.data.cart, {
+                    id: detailProduct.id,
+                    title: detailProduct.title,
+                    image: detailProduct.image,
+                    qty,
+                    price: subTotal,
+                    checked: false,
+                    notes: note
+                }]
+            })
+        } else {
+            setWarning(true)
+        }
+    }
 
     useEffect(() => {
         const fetchData = async () => {
@@ -27,6 +51,7 @@ export default function Index() {
                     setDetailProduct(data)
                     setPrice(data.price)
                     setisLoading(false)
+                    setSubTotal(data.price)
                 } else {
                     console.log('ada gangguan detail product');
                 }
@@ -41,27 +66,13 @@ export default function Index() {
         // addToCart()
     }, [])
 
-    const addToCart = () => {
+    useEffect(() => {
+        setSubTotal(qty * price)
 
-        const found = cart.data.cart.some(e => e.id === detailProduct.id)
-        if (!found) {
-            cart.setData({
-                ...cart.data,
+    }, [qty])
 
-                cart: [...cart.data.cart, {
-                    id: detailProduct.id,
-                    title: detailProduct.title,
-                    image: detailProduct.image,
-                    qty: 1,
-                    price: detailProduct.price,
-                    checked: false,
-                    notes: note
-                }]
-            })
-        }
-    }
 
-    console.log(cart);
+    console.log(warning);
     // console.log('isi keranjang', cartProduct);
 
     return (
@@ -111,6 +122,7 @@ export default function Index() {
                                 <p>Quantity & Notes</p>
                                 <hr className='my-3' />
 
+                                {/* QTY */}
                                 <div className="flex items-center gap-4">
                                     <div className='flex w-28 border border-primary rounded-lg justify-around items-center py-1'>
                                         <button disabled={qty == 1} onClick={() => setQty(qty - 1)} className={`text-lg ${qty == 1 ? 'cursor-not-allowed' : ''} `}>-</button>
@@ -122,7 +134,7 @@ export default function Index() {
 
                                 {notes ?
                                     <div>
-                                        <input className='border border-primary w-full rounded-lg p-2 mt-3 text-gray-700 font-primary' type="text" placeholder='Example : White Color' onChange={() => setNote()} />
+                                        <input className='border border-primary w-full rounded-lg p-2 mt-3 text-gray-700 font-primary' type="text" placeholder='Example : White Color' onChange={(e) => setNote(e.target.value)} />
                                         <button onClick={() => setisnotes(false)} >Cancel</button>
                                     </div> :
                                     <button onClick={() => setisnotes(true)} className='text-primary font-medium flex my-3 gap-1'>
@@ -138,7 +150,7 @@ export default function Index() {
                                 <div className='flex items-center justify-between mt-3'>
                                     <p className='font-primary text-gray-500'>Subtotal</p>
 
-                                    <p className='font-primary text-xl font-medium'>$ {price * qty}</p>
+                                    <p className='font-primary text-xl font-medium'>$ {subTotal}</p>
                                 </div>
 
                                 <div className='flex my-3'>

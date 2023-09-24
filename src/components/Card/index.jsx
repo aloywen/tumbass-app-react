@@ -8,11 +8,11 @@ export default function Index(props) {
     let product = props.data
     // console.log(product);
     return (
-        <div>
+        <div key={product.id}>
             <Link
                 to={/detailproduct/ + product.id} state={{ kode: product.id, cat: product.category }}
             >
-                <div className='w-40 md:w-60 rounded-lg border-2 border-primary hover:bg-purple-200 mx-auto mb-4' key={product.id}>
+                <div className='w-40 md:w-60 rounded-lg border-2 border-primary hover:bg-purple-200 mx-auto mb-4' >
                     <LazyLoadImage
                         effect='opacity'
                         src={product.image}

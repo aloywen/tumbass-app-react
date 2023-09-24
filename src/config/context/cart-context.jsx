@@ -12,7 +12,7 @@ export function DataCart({ children }) {
   const [data, setData] = useState({
     totalCart: 0,
     cart: [],
-    isDouble: false
+    // isDouble: false
   })
 
   const appContextValue = {

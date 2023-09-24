@@ -16,7 +16,7 @@ export default function Index() {
                 <div className='flex flex-col w-8/12 gap-4 md:gap-9 flex-wrap my-10'>
                     {
                         dataCart.map((data) => (
-                            <Cardcart data={data} />
+                            <Cardcart data={data} key={data.title} />
                         ))
                     }
                 </div>

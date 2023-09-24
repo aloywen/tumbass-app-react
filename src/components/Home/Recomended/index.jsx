@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom'
 import Card from '../../Card'
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
 export default function Index() {
@@ -31,8 +30,8 @@ export default function Index() {
 
         <div className='flex justify-center gap-4 md:gap-9 flex-wrap mt-10'>
             {products.map((data =>
-                <Link to={/detailproduct/ + data.id} state={{ kode: data.id, cat: data.category }}>
-                    <Card data={data} key={data.id} />
+                <Link key={data.id} to={/detailproduct/ + data.id} state={{ kode: data.id, cat: data.category }}>
+                    <Card data={data} />
                 </Link>
             ))}
 

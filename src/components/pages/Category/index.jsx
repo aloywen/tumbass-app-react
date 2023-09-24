@@ -30,8 +30,8 @@ export default function Index() {
             <p className='font-primary text-md md:text-xl ml-3 my-6'>Category {state.cat}</p>
             <div className='flex justify-center gap-4 md:gap-9 flex-wrap'>
                 {productsCategory.map((data) => (
-                    <div>
-                        {<Card data={data} key={data.id} />}
+                    <div key={data.id}>
+                        {<Card data={data} />}
                     </div>
                 ))}
             </div>

@@ -42,8 +42,8 @@ export default function Index() {
             }
         }}>
             {product.map((data) =>
-                <SwiperSlide  >
-                    <div key={data.id} className='w-72 md:w-80 rounded-xl border-2 border-primary mx-auto'>
+                <SwiperSlide key={data.id} >
+                    <div className='w-72 md:w-80 rounded-xl border-2 border-primary mx-auto'>
                         <LazyLoadImage
                             effect="blur"
                             src={"https://ik.imagekit.io/aloywen/tumbas/special/" + data.gambar} alt="" className='rounded-t-lg'
