@@ -3,7 +3,6 @@ import { Link, useLocation } from 'react-router-dom'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import { JellyTriangle } from '@uiball/loaders'
-
 import { ContextDataCart } from '../../../config/'
 
 
@@ -11,13 +10,13 @@ export default function Index() {
     let { state } = useLocation();
     const cart = ContextDataCart()
 
+    const [cartProduct, setCartProduct] = useState(cart.data.cart)
     const [detailProduct, setDetailProduct] = useState()
     const [isLoading, setisLoading] = useState(true)
     const [note, setNote] = useState('')
     const [notes, setisnotes] = useState(false)
     const [qty, setQty] = useState(1)
     const [price, setPrice] = useState('')
-
 
     useEffect(() => {
         const fetchData = async () => {
@@ -37,33 +36,33 @@ export default function Index() {
             }
         }
 
+
         fetchData()
+        // addToCart()
     }, [])
 
     const addToCart = () => {
 
-        if (cart.data.cart[0].title !== detailProduct.title) {
+        const found = cart.data.cart.some(e => e.id === detailProduct.id)
+        if (!found) {
             cart.setData({
+                ...cart.data,
+
                 cart: [...cart.data.cart, {
+                    id: detailProduct.id,
                     title: detailProduct.title,
                     image: detailProduct.image,
                     qty: 1,
                     price: detailProduct.price,
                     checked: false,
                     notes: note
-                }],
-
-                totalCart: cart.data.totalCart + 1
-
+                }]
             })
-        } else {
-            console.log('gak boleh double');
         }
-
     }
 
     console.log(cart);
-    // console.log(title);
+    // console.log('isi keranjang', cartProduct);
 
     return (
         <div className='md:mt-32'>

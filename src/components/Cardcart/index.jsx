@@ -12,6 +12,8 @@ export default function Index(props) {
 
     const plusQty = () => {
         data.setData({
+            ...cart.data,
+
             cart: data.data.cart.map(obj => {
                 if (obj.title === product.title) {
                     return { ...obj, qty: obj.qty + 1 }
@@ -20,12 +22,13 @@ export default function Index(props) {
                 return obj
             }),
 
-            totalCart: data.data.totalCart
         })
     }
 
     const minQty = () => {
         data.setData({
+            ...cart.data,
+
             cart: data.data.cart.map(obj => {
                 if (obj.title === product.title) {
                     return { ...obj, qty: obj.qty - 1 }
@@ -33,8 +36,6 @@ export default function Index(props) {
 
                 return obj
             }),
-
-            totalCart: data.data.totalCart
         })
     }
 
@@ -48,7 +49,7 @@ export default function Index(props) {
         })
     }
 
-    console.log(data.data);
+    // console.log(data.data);
     return (
         <div className='flex flex-col shadow-lg p-6'>
             <div className='flex items-center gap-3'>

@@ -14,7 +14,7 @@ export default function Index() {
     //     count++;
     // }
 
-    console.log(totalCart);
+    // console.log(totalCart);
 
     return (
         <div className='relative '>

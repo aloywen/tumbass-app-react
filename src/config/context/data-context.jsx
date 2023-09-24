@@ -11,16 +11,8 @@ export function ContextDataCart() {
 export function DataCart({ children }) {
   const [data, setData] = useState({
     totalCart: 0,
-    cart: [
-      {
-        title: '',
-        image: '',
-        qty: '',
-        price: '',
-        checked: '',
-        notes: ''
-      }
-    ],
+    cart: [],
+    isDouble: false
   })
 
   const appContextValue = {
