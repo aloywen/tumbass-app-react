@@ -3,12 +3,12 @@ import { Link, useLocation } from 'react-router-dom'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import { JellyTriangle } from '@uiball/loaders'
-import { ContextDataCart } from '../../../config/'
+import { ContextDataItem } from '../../../config/'
 
 
 export default function Index() {
     let { state } = useLocation();
-    const cart = ContextDataCart()
+    const cart = ContextDataItem()
 
     const [detailProduct, setDetailProduct] = useState()
     const [isLoading, setisLoading] = useState(true)
@@ -18,7 +18,6 @@ export default function Index() {
     const [price, setPrice] = useState()
     const [subTotal, setSubTotal] = useState()
     const [warning, setWarning] = useState(false)
-
 
 
     const addToCart = () => {
@@ -77,6 +76,7 @@ export default function Index() {
 
     return (
         <div className='md:mt-32'>
+            {warning ? alert('Item sudah dipilih') : ''}
             {isLoading ? <div className='flex items-center justify-center'><JellyTriangle
                 size={60}
                 speed={1.75}

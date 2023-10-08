@@ -9,12 +9,12 @@ import 'swiper/css/pagination';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
-import { ContextDataCart } from '../../../config'
+import { ContextDataItem } from '../../../config'
 
 
 
 export default function Index() {
-    const total = ContextDataCart()
+    const total = ContextDataItem()
 
 
     const product = Data.special

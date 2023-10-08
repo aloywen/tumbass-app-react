@@ -1,4 +1,4 @@
-import { useState, useContext, createContext } from 'react'
+import { useState, useContext, createContext, useEffect } from 'react'
 
 export const DataItemContext = createContext({})
 
@@ -10,6 +10,7 @@ export function DataItem({ children }) {
 
     const [product, setProduct] = useState()
     const [category, setCategory] = useState()
+    const [totalCart, setTotalCart] = useState(0)
 
     const appContextValue = {
         product,
@@ -18,10 +19,43 @@ export function DataItem({ children }) {
         setCategory
     }
 
+    useEffect(() => {
+        const fetchCategory = async () => {
+            try {
+                let response = await fetch('https://fakestoreapi.com/products/categories')
+                if (response.status === 200) {
+                    let data = await response.json()
+                    setCategory(data)
+                } else {
+                    console.log('ada gangguan category');
+                }
+            } catch (error) {
+                console.log('ada gangguan category');
+            }
+        }
+
+        const fetchProduct = async () => {
+            try {
+                let response = await fetch('https://fakestoreapi.com/products?limit=8')
+                if (response.status === 200) {
+                    let dataP = await response.json()
+                    setProduct(dataP)
+                } else {
+                    console.log('ada gangguan category');
+                }
+            } catch (error) {
+                console.log('ada gangguan category');
+            }
+        }
+
+        fetchCategory()
+        fetchProduct()
+    }, [])
+
     return (
-        <DataItemContext value={appContextValue}>
+        <DataItemContext.Provider value={appContextValue}>
             {children}
-        </DataItemContext>
+        </DataItemContext.Provider>
     )
 
 }

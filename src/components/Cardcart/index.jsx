@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
-import { ContextDataCart } from '../../config'
+import { ContextDataItem } from '../../config'
 
 export default function Index(props) {
     const product = props.data
-    const data = ContextDataCart()
+    const data = ContextDataItem()
 
     const [qty, setQty] = useState(1)
     const [note, setNote] = useState('')

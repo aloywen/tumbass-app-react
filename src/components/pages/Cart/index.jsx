@@ -1,9 +1,9 @@
 import React from 'react'
 import Cardcart from '../../Cardcart'
-import { ContextDataCart } from '../../../config'
+import { ContextDataItem } from '../../../config'
 
 export default function Index() {
-    const store = ContextDataCart();
+    const store = ContextDataItem();
 
     let dataCart = store.data.cart
     let count = store.data.totalCart

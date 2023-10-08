@@ -4,16 +4,16 @@ import ReactDOM from 'react-dom/client'
 import App from './App'
 import './index.css'
 
-import { DataCart } from './config'
+import { DataItem } from './config'
 
 import { BrowserRouter } from 'react-router-dom'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
-      <DataCart>
+      <DataItem>
         <App />
-      </DataCart>
+      </DataItem>
     </BrowserRouter>
   </React.StrictMode>,
 )
