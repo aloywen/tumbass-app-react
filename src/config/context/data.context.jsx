@@ -9,14 +9,19 @@ export function ContextDataItem() {
 export function DataItem({ children }) {
 
     const [product, setProduct] = useState()
+    const [cart, setCart] = useState([])
     const [category, setCategory] = useState()
     const [totalCart, setTotalCart] = useState(0)
 
     const appContextValue = {
         product,
         setProduct,
+        cart,
+        setCart,
         category,
-        setCategory
+        setCategory,
+        totalCart,
+        setTotalCart
     }
 
     useEffect(() => {

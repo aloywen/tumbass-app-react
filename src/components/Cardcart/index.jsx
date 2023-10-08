@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { ContextDataItem } from '../../config'
 
@@ -11,32 +11,29 @@ export default function Index(props) {
     const [notes, setisnotes] = useState(false)
 
     const plusQty = () => {
-        data.setData({
-            ...cart.data,
-
-            cart: data.data.cart.map(obj => {
-                if (obj.title === product.title) {
-                    return { ...obj, qty: obj.qty + 1 }
+        data.setCart(
+            data.cart.map((item) => {
+                console.log(item)
+                if (item.id === product.id) {
+                    return { ...item, qty: product.qty + 1 }
+                } else {
+                    return item;
                 }
-
-                return obj
-            }),
-
-        })
+            })
+        );
     }
 
     const minQty = () => {
-        data.setData({
-            ...cart.data,
-
-            cart: data.data.cart.map(obj => {
-                if (obj.title === product.title) {
-                    return { ...obj, qty: obj.qty - 1 }
+        data.setCart(
+            data.cart.map((item) => {
+                console.log(item)
+                if (item.id === product.id) {
+                    return { ...item, qty: product.qty - 1 }
+                } else {
+                    return item;
                 }
-
-                return obj
-            }),
-        })
+            })
+        );
     }
 
     const removeCart = () => {
@@ -49,9 +46,23 @@ export default function Index(props) {
         })
     }
 
-    // console.log(data.data);
+    useEffect(() => {
+        data.setCart(
+            data.cart.map((item) => {
+                if (item.id === product.id) {
+                    return { ...item, grandprice: item.qty * item.subprice }
+                } else {
+                    return item;
+                }
+            })
+        );
+
+    }, [product.qty])
+
+
+    console.log(qty);
     return (
-        <div className='flex flex-col shadow-lg p-6'>
+        <div className='flex flex-col shadow-lg p-6 hover:bg-slate-100'>
             <div className='flex items-center gap-3'>
                 <input type="checkbox" name="checked" className='w-4 h-4' />
 
@@ -65,7 +76,7 @@ export default function Index(props) {
 
                 <div>
                     <p className='font-primary mb-2'>{product.title}</p>
-                    <p className='font-primary text-slate-900 font-semibold'>$ {product.price}</p>
+                    <p className='font-primary text-slate-900 font-semibold'>$ {product.grandprice}</p>
                 </div>
             </div>
 

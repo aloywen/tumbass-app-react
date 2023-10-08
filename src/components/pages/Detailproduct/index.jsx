@@ -4,11 +4,12 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import { JellyTriangle } from '@uiball/loaders'
 import { ContextDataItem } from '../../../config/'
+import Swal from "sweetalert2";
 
 
 export default function Index() {
     let { state } = useLocation();
-    const cart = ContextDataItem()
+    const data = ContextDataItem()
 
     const [detailProduct, setDetailProduct] = useState()
     const [isLoading, setisLoading] = useState(true)
@@ -19,26 +20,42 @@ export default function Index() {
     const [subTotal, setSubTotal] = useState()
     const [warning, setWarning] = useState(false)
 
+    // Swal.fire({
+    //     title: 'Error!',
+    //     text: 'Do you want to continue',
+    //     icon: 'error',
+    //     confirmButtonText: 'Cool'
+    // }).then(function () {
+    //     // Redirect the user
+    //     window.location.reload();
+    // })
+
 
     const addToCart = () => {
 
-        const found = cart.data.cart.some(e => e.id === detailProduct.id)
+
+        const found = data.cart.some(e => e.id === detailProduct.id)
         if (!found) {
-            cart.setData({
-                ...cart.data,
-                cart: [...cart.data.cart, {
+            data.setCart(
+                [...data.cart, {
                     id: detailProduct.id,
                     title: detailProduct.title,
                     image: detailProduct.image,
                     qty,
-                    price: subTotal,
-                    checked: false,
+                    subprice: detailProduct.price,
+                    grandprice: subTotal,
+                    checked: true,
                     notes: note
                 }]
-            })
+            )
         } else {
             setWarning(true)
         }
+
+        data.setTotalCart(
+
+            data.totalCart + 1
+        )
     }
 
     useEffect(() => {
@@ -62,7 +79,6 @@ export default function Index() {
 
 
         fetchData()
-        // addToCart()
     }, [])
 
     useEffect(() => {
@@ -71,17 +87,22 @@ export default function Index() {
     }, [qty])
 
 
-    console.log(warning);
+    // console.log(data);
+    // console.log(warning);
     // console.log('isi keranjang', cartProduct);
 
     return (
         <div className='md:mt-32'>
-            {warning ? alert('Item sudah dipilih') : ''}
+
+            {warning ? alert('Product Sudah Dikeranjang', setWarning(false)) : null}
+
             {isLoading ? <div className='flex items-center justify-center'><JellyTriangle
                 size={60}
                 speed={1.75}
                 color="black"
             /></div> :
+
+                // CONTENT PRODUCT
                 <div className='md:mx-20'>
                     <div className='flex md:mb-10 gap-2 md:w-7/12 overflow-hidden hover:w-full'>
                         <Link to={"/"} className='text-primary text-md font-primary'>Home</Link>
@@ -166,9 +187,14 @@ export default function Index() {
 
                     <div className='mt-20 mb-10'>
                         <p className='font-primary text-xl md:text-2xl'>Recomended For You</p>
+
+                        {/* <div className='w-80 h-20 flex justify-center items-center border-2 border-gray-700 text-primary font-primary text-xl rounded-md'>Product Already In Cart</div> */}
                     </div>
                 </div>
             }
+
+
+
         </div >
     )
 }

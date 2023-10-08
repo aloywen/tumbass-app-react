@@ -5,9 +5,9 @@ import { ContextDataItem } from '../../../config'
 export default function Index() {
     const store = ContextDataItem();
 
-    let dataCart = store.data.cart
-    let count = store.data.totalCart
-    console.log(count);
+    let dataCart = store.cart
+    let count = store.totalCart
+    // console.log(count);
     return (
         <div className='mx-14'>
             <p className='text-2xl font-primary line-clamp-2 text-gray-900 mt-36 mb-3'>Keranjang</p>
