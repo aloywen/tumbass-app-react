@@ -4,7 +4,6 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import { JellyTriangle } from '@uiball/loaders'
 import { ContextDataItem } from '../../../config/'
-import Swal from "sweetalert2";
 
 
 export default function Index() {
@@ -19,25 +18,14 @@ export default function Index() {
     const [price, setPrice] = useState()
     const [subTotal, setSubTotal] = useState()
     const [warning, setWarning] = useState(false)
-
-    // Swal.fire({
-    //     title: 'Error!',
-    //     text: 'Do you want to continue',
-    //     icon: 'error',
-    //     confirmButtonText: 'Cool'
-    // }).then(function () {
-    //     // Redirect the user
-    //     window.location.reload();
-    // })
+    const [added, setAdded] = useState(false)
 
 
     const addToCart = () => {
-
-
         const found = data.cart.some(e => e.id === detailProduct.id)
         if (!found) {
             data.setCart(
-                [...data.cart, {
+                (prevState) => [...prevState, {
                     id: detailProduct.id,
                     title: detailProduct.title,
                     image: detailProduct.image,
@@ -46,14 +34,14 @@ export default function Index() {
                     grandprice: subTotal,
                     checked: true,
                     notes: note
-                }]
+                }],
+                setAdded(true)
             )
         } else {
             setWarning(true)
         }
 
         data.setTotalCart(
-
             data.totalCart + 1
         )
     }
@@ -86,15 +74,11 @@ export default function Index() {
 
     }, [qty])
 
-
-    // console.log(data);
-    // console.log(warning);
-    // console.log('isi keranjang', cartProduct);
-
     return (
         <div className='md:mt-32'>
 
-            {warning ? alert('Product Sudah Dikeranjang', setWarning(false)) : null}
+            {warning ? alert('Product already in cart!', setWarning(false)) : null}
+            {added ? alert('Product added!', setAdded(false)) : null}
 
             {isLoading ? <div className='flex items-center justify-center'><JellyTriangle
                 size={60}

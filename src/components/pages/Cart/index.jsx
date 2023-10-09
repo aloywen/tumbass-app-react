@@ -10,14 +10,15 @@ export default function Index() {
     // console.log(count);
     return (
         <div className='mx-14'>
-            <p className='text-2xl font-primary line-clamp-2 text-gray-900 mt-36 mb-3'>Keranjang</p>
+            <p className='text-2xl font-primary line-clamp-2 underline text-gray-900 mt-36 mb-3'>Cart</p>
 
             <div className='flex flex-row'>
                 <div className='flex flex-col w-8/12 gap-4 md:gap-9 flex-wrap my-10'>
                     {
-                        dataCart.map((data) => (
-                            <Cardcart data={data} key={data.title} />
-                        ))
+                        dataCart.length > 0 ?
+                            dataCart.map((data) => (
+                                <Cardcart data={data} key={data.title} />
+                            )) : <p>No product selected yet ..</p>
                     }
                 </div>
 
