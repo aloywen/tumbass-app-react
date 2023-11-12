@@ -36,6 +36,7 @@ export default function Index(props) {
             })
         );
     }
+    // hfcdf
 
     const removeCart = () => {
         setRemove(true)
@@ -63,7 +64,7 @@ export default function Index(props) {
     }, [product.qty])
 
 
-    console.log(remove);
+    // console.log(remove);
     return (
         <div className='flex flex-col shadow-lg p-6 hover:bg-slate-100'>
             {remove == true ? alert('product deleted!', setRemove(false)) : ''}

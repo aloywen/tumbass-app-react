@@ -68,22 +68,22 @@
       "id": 1,
       "nama": "Running Shoes",
       "gambar": "running-shoes.jpg",
-      "harga": 125000,
-      "disc": 95000
+      "harga": 48,
+      "disc": 43.3
     },
     {
       "id": 2,
       "nama": "Long Pants Chinos",
       "gambar": "chinos.jpg",
-      "harga": 135000,
-      "disc": 99999
+      "harga": 10.4,
+      "disc": 8.5
     },
     {
       "id": 3,
       "nama": "Green Cable Cardigan",
       "gambar": "cardigan.jpg",
-      "harga": 145000,
-      "disc": 109999
+      "harga": 16.3,
+      "disc": 13.5
     }
   ],
   "terlaris": [

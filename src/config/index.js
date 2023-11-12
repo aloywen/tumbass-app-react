@@ -1,3 +1,3 @@
 import { ContextDataItem, DataItem } from './context/data.context'
-
-export { ContextDataItem, DataItem }
+import { db } from './firebase/firebase.config'
+export { ContextDataItem, DataItem, db }

@@ -25,7 +25,7 @@ export default function Index() {
                 <div className='w-4/12'>
                     <div className='p-4 shadow-lg w-full m-2'>
                         <p>Summary</p>
-                        <p>Total Price {count > 1 ? 'items' : 'item'}</p>
+                        <p>Total Price {dataCart.length > 1 ? 'items' : 'item'}</p>
                     </div>
                 </div>
             </div>
