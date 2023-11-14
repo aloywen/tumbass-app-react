@@ -75,7 +75,7 @@ export default function Index() {
     }, [qty])
 
     return (
-        <div className='md:mt-32'>
+        <div className='mt-20 md:mt-32'>
 
             {warning ? alert('Product already in cart!', setWarning(false)) : null}
             {added ? alert('Product added!', setAdded(false)) : null}
@@ -95,11 +95,12 @@ export default function Index() {
                         {'>'}
                         <p className='text-md line-clamp-1 font-primary'>{detailProduct.title}</p>
                     </div>
-                    <div className='flex justify-between gap-0 relative'>
-                        <div className='flex w-2/3'>
+
+                    <div className='flex flex-col md:flex-row justify-between gap-0 relative mt-8'>
+                        <div className='flex flex-col md:flex-row justify-center md:w-2/3'>
 
                             {/* IMAGE */}
-                            <div >
+                            <div className='mx-auto'>
                                 <LazyLoadImage
                                     effect='opacity'
                                     src={detailProduct.image}
@@ -110,7 +111,7 @@ export default function Index() {
                             </div>
 
                             {/* TITLE & DESCRIPSTION */}
-                            <div className='w-2/3 ml-16'>
+                            <div className='mx-5 md:w-2/3 md:ml-16 overflow-auto'>
                                 <p className='text-lg font-primary line-clamp-2 text-gray-800 mb-3'>{detailProduct.title}</p>
                                 <span className='font-primary text-2xl text-gray-700 font-bold'>{`$. ${detailProduct.price}`}</span>
 
@@ -121,8 +122,8 @@ export default function Index() {
                         </div>
 
 
-                        {/* NOTES */}
-                        <div className='w-1/3 sticky md:top-48 right-0'>
+                        {/* QTY NOTES */}
+                        <div className=' mt-5 md:w-1/3 sticky md:top-48 mx-auto md:right-0'>
                             <div className='border border-gray-600 py-3 px-2 rounded-lg w-2/3'>
                                 <p>Quantity & Notes</p>
                                 <hr className='my-3' />
