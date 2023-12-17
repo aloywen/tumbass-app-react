@@ -36,7 +36,18 @@ export default function Index(props) {
             })
         );
     }
-    // hfcdf
+
+    const checked = () => {
+        data.setCart(
+            data.cart.map((item) => {
+                if (item.id === product.id) {
+                    return { ...item, checked: !product.checked }
+                } else {
+                    return item
+                }
+            })
+        )
+    }
 
     const removeCart = () => {
         setRemove(true)
@@ -49,6 +60,8 @@ export default function Index(props) {
         )
 
     }
+
+
 
     useEffect(() => {
         data.setCart(
@@ -69,7 +82,7 @@ export default function Index(props) {
         <div className='flex flex-col shadow-lg p-6 hover:bg-slate-100'>
             {remove == true ? alert('product deleted!', setRemove(false)) : ''}
             <div className='flex items-center gap-3'>
-                <input type="checkbox" name="checked" className='w-4 h-4' />
+                <input type="checkbox" name="checked" onClick={checked} className='w-4 h-4' />
 
                 <LazyLoadImage
                     effect='opacity'

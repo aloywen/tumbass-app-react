@@ -33,7 +33,7 @@ export default function Index() {
                     qty: 1,
                     subprice: item.subprice,
                     grandprice: item.grandprice,
-                    checked: true,
+                    checked: false,
                     notes: ''
                 }],
                 setAdded(true)

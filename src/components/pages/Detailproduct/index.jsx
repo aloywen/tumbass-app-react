@@ -32,7 +32,7 @@ export default function Index() {
                     qty,
                     subprice: detailProduct.price,
                     grandprice: subTotal,
-                    checked: true,
+                    checked: false,
                     notes: note
                 }],
                 setAdded(true)
