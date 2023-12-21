@@ -117,13 +117,13 @@ export default function Index() {
 
 
                                 <p className='text-lg font-primary font-semibold text-gray-900 mt-4'>Description</p>
-                                <p className='text-md font-primary text-gray-600 mt-2 pr-3'>{detailProduct.description}</p>
+                                <p className='text-md font-primary text-justify text-gray-600 mt-3 pr-3'>{detailProduct.description}</p>
                             </div>
                         </div>
 
 
                         {/* QTY NOTES */}
-                        <div className=' mt-5 md:w-1/3 sticky md:top-48 mx-auto md:right-0'>
+                        <div className=' mt-10 md:w-1/3 sticky md:top-48 mx-auto md:right-0'>
                             <div className='border border-gray-600 py-3 px-2 rounded-lg w-2/3'>
                                 <p>Quantity & Notes</p>
                                 <hr className='my-3' />
@@ -171,7 +171,7 @@ export default function Index() {
                     </div>
 
                     <div className='mt-20 mb-10'>
-                        <p className='font-primary text-xl md:text-2xl'>Recomended For You</p>
+                        {/* <p className='font-primary text-xl md:text-2xl'>Recomended For You</p> */}
 
                         {/* <div className='w-80 h-20 flex justify-center items-center border-2 border-gray-700 text-primary font-primary text-xl rounded-md'>Product Already In Cart</div> */}
                     </div>
