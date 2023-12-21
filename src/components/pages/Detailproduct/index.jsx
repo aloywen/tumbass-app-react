@@ -32,11 +32,13 @@ export default function Index() {
                     qty,
                     subprice: detailProduct.price,
                     grandprice: subTotal,
-                    checked: false,
+                    checked: true,
                     notes: note
                 }],
                 setAdded(true)
             )
+
+            data.setGrandTotal(data.grandTotal + subTotal)
         } else {
             setWarning(true)
         }

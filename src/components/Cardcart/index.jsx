@@ -47,6 +47,9 @@ export default function Index(props) {
                 }
             })
         )
+
+
+
     }
 
     const removeCart = () => {
@@ -60,6 +63,12 @@ export default function Index(props) {
         )
 
     }
+
+    // const grandTot = store.cart.reduce((prev, curr) => {
+    //     curr.checked === true ? `${prev + curr.grandprice}` : 0
+    // })
+
+    // console.log(grandTot);
 
 
 
@@ -76,13 +85,22 @@ export default function Index(props) {
 
     }, [product.qty])
 
+    // useEffect(() => {
+    //     data.setGrandTotal(
+    //          data.cart.reduce((prev, curr) => prev + curr.grandprice)
+
+    //     )
+
+    // }, [product.checked])
+
+
 
     // console.log(remove);
     return (
         <div className='flex flex-col shadow-lg p-6 hover:bg-slate-100'>
             {remove == true ? alert('product deleted!', setRemove(false)) : ''}
             <div className='flex items-center gap-3'>
-                <input type="checkbox" name="checked" onClick={checked} className='w-4 h-4' />
+                <input type="checkbox" name="checked" checked={product.checked === true} onClick={checked} className='w-4 h-4' />
 
                 <LazyLoadImage
                     effect='opacity'
@@ -99,7 +117,7 @@ export default function Index(props) {
             </div>
 
 
-            <div className='flex items-center justify-between'>
+            <div className='flex items-center justify-between mt-2'>
                 {/* NOTES */}
                 {notes ?
                     <div>

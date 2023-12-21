@@ -20,7 +20,7 @@ export default function Index() {
     const [warning, setWarning] = useState(false)
     const [added, setAdded] = useState(false)
 
-    console.log(data)
+    // console.log(data)
     const addToCart = (item) => {
         console.log(item);
         const found = data.cart.some(e => e.id === item.id)
@@ -33,11 +33,13 @@ export default function Index() {
                     qty: 1,
                     subprice: item.subprice,
                     grandprice: item.grandprice,
-                    checked: false,
+                    checked: true,
                     notes: ''
                 }],
                 setAdded(true)
             )
+
+            data.setGrandTotal(data.grandTotal + item.grandprice)
         } else {
             setWarning(true)
         }

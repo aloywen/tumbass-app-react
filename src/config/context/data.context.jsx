@@ -12,6 +12,7 @@ export function DataItem({ children }) {
     const [cart, setCart] = useState([])
     const [category, setCategory] = useState()
     const [totalCart, setTotalCart] = useState(0)
+    const [grandTotal, setGrandTotal] = useState(0)
 
     const appContextValue = {
         product,
@@ -21,7 +22,9 @@ export function DataItem({ children }) {
         category,
         setCategory,
         totalCart,
-        setTotalCart
+        setTotalCart,
+        grandTotal,
+        setGrandTotal
     }
 
     useEffect(() => {
